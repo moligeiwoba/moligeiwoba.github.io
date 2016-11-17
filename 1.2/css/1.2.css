@@ -1,0 +1,134 @@
+body{margin: 0px;background: rgb(222,222,222);}
+#top{
+	background: rgb(51,51,51);
+	height: 50px;
+}
+h1{
+	margin: 0px;
+}
+h1 img{
+	height: 50px;
+}
+#top a{
+	text-decoration: none;
+
+
+}
+li a:link{
+	color: white;
+}
+li a:hover{
+	color: white;
+}
+#top_icon{
+	float: left;
+}
+#top_nav{
+	float: right;
+}
+#top_nav li{
+	float: left;
+	margin-right: 20px;
+	font-size: 12px;
+	width: 70px;
+
+}
+
+#first,#second,#third,#four,#five{
+	margin: 20px 25px;
+	padding: 20px 20px;
+	background: rgb(255,255,255);
+	border-right:2px solid rgb(132,132,132);
+	border-bottom:2px solid rgb(132,132,132);
+}
+#first,#second p{
+	text-indent:2em;
+}
+span{
+	font-size: 13px;
+	color: rgb(132,132,132);
+}
+h3{
+	font-size: 17px;
+	color: rgb(132,132,132);
+}
+
+#second li{
+	list-style:none;
+}
+figure{
+	border:1px solid black;
+	text-align: center;
+	padding: 10px;
+	width: 120px;
+}
+figure img {
+	width: 100px;
+	height: 80px;
+}
+#four li{
+	font-weight: bold;
+}
+#mytable{
+	width: 100%;
+	border-collapse:collapse;
+}
+#mytable th,#mytable td{
+	font-size: 1em;
+	border:1px solid rgb(204,204,204);
+	padding: 2px 7px;
+}
+#mytable th{
+	font-size: 1.1em;
+	text-align: left;
+	background-color: rgb(51,51,51);
+	color: white;
+}
+#mytable tfoot{
+	background-color: rgb(204,204,204);
+}
+h4{
+	border-left: 3px solid rgb(222,222,222);
+	height: 40px;
+	padding-left: 10px;
+	line-height: 40px;
+
+}
+form {
+	
+}
+
+footer{
+	height: 70px;
+	background: black;
+	line-height: 70px;
+	text-align: center;
+	color: white;
+}
+#tijiao{
+	width: 100%;
+	height: 40px;
+	background: rgb(51,85,208);
+	color: white;
+	border:1px solid;
+	border-radius:15px;
+}
+#five form div{
+	font-size: 14px;
+	margin: 15px 0;
+}
+.trip{
+	width: 35%;
+	text-align: right;
+	float:left; 
+	padding-right: 15px;
+
+}
+#five form div p{
+	margin-left: 35%;
+	padding-left: 15px;
+}
+#five form div textarea{
+	width: 60%;
+	height: 40px;
+}
