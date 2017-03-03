@@ -1,0 +1,42 @@
+header{
+	width: 100%;
+	background: rgb(34,137,191);
+	height: 55px;
+	padding:0px  50px;
+	position: relative;
+}
+.icon-1{
+	width: 36px;
+	height: 36px;
+	background-image: url(../img/top-icon.png);
+	display: inline-block;
+	position: absolute;
+	left: 50px;
+	top: 9px;
+}
+.search{
+	width: 315px;
+	height: 30px;
+	border:0;
+	border-radius: 15px;
+	position: absolute;
+	right: 150px;
+	top: 12px;
+	padding-left: 35px;
+
+}
+.login{
+	color: white;
+	position: absolute;
+	right: 80px;
+	font-size: 12px;
+	font-family: "黑体";
+	line-height: 55px;
+
+}
+.search-form i{
+	display: inline-block;
+	position: absolute;
+	right: 430px;
+    line-height: 56px;
+}
