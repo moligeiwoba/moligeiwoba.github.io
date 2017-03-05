@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.left{
+			display: inline-block;
+		}
+		.right{
+			display: inline-block;
+			margin-left: 30px;
+		}
+		button{
+			border-radius: 5px;
+			background-color: white;
+			border:1px solid #ddd;
+		}
+		ul{
+			padding: none;
+			margin: none;
+		}
+		li{
+			float: left;
+			text-align: center;
+			height: 35px;
+			line-height: 35px;
+			color: white;
+			background-color: red;
+			list-style: none;
+			padding: 0 15px;
+			margin: 0px 10px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="number"></input>
+	<div class="left">
+		<button id="left-in">左侧入</button>
+		<button id="right-in">右侧入</button>
+	</div>
+	<div class="right">
+		<button id="left-out">左侧出</button>
+		<button id="right-out">右侧出</button>
+	</div>
+	<ul id="number-box">
+		
+	</ul>
+	<script type="text/javascript">
+/*		var btnLeftIn = document.getElementById("left-in");
+		var btnRightIn = document.getElementById("right-in");
+		btnLeftIn.onclick=numberin;
+		btnRightIn.onclick=numberin;
+		var numberBox = document.getElementById("number-box");
+		function numberin(){
+			var inputText = document.getElementById("number").value;
+			if(this.id=="right-in"){
+				var liTag =  document.createElement("li");
+				var textnode=document.createTextNode(inputText)
+				liTag.appendChild(textnode);
+				liTag.setAttribute("onclick","deleLi()");
+				numberBox.appendChild(liTag);
+			}
+			else{
+				var liTag =  document.createElement("li");
+				var textnode=document.createTextNode(inputText);
+				liTag.appendChild(textnode);
+				liTag.setAttribute("onclick","deleLi()");
+				numberBox.insertBefore(liTag,numberBox.childNodes[0]);
+			}
+		}
+
+		function deleLi(){
+			console.log(this);
+		}*/
+//创建数组arr[]用于储存所有数据
+var arr = [];
+//检查输入的合法性
+function checkInput(){
+	var input = document.getElementById("number");
+	var value = input.value.trim();
+	if (!value) {
+		return false;
+	}
+	if (!/^[1-9]+\d*$/.test(value)) {
+		alert('请输入正整数');
+		 return false;
+	}
+		return true;
+}
+
+/*
+ * 渲染队列
+ */
+function renderQuqne(){
+	var numberBox = document.getElementById("number-box");
+	var str ="";
+	for (var i = 0; i <arr.length; i++) {
+		str += "<li onclick='deletLi(this)' data-tab="+i+">"+arr[i]+"</li>";
+	}
+	numberBox.innerHTML=str;
+}
+/*
+	删除节点方法
+ */
+function deletLi(x){
+	x.parentNode.removeChild(x);
+	arr.splice(x.getAttribute("data-tab"),1);
+	renderQuqne();
+
+}
+//队列插入的方法
+function inBtnHandle(){
+	var input = document.getElementById("number");
+	inputText= input.value;
+	if (!inputText) {
+		alert('请输入...');
+		return;
+	}
+	input.value ='';
+	if (this.id=="left-in"){
+	arr.unshift(inputText);
+	}
+	else if (this.id=="right-in"){
+	arr.push(inputText);
+	}
+	renderQuqne();
+
+}
+//队列除去的方法
+function outBtnHandle(){
+	if (arr.length>0) {
+		if (this.id=="left-out"){
+		arr.shift();
+		}
+		else if (this.id=="right-out"){
+		arr.pop();
+		}
+		renderQuqne();
+	} else {
+        alert('队列已经空啦！！！');
+    }
+}
+
+
+
+function init() {
+	//给input绑定onblur事件
+	var  inputText = document.getElementById("number");
+	inputText.addEventListener("blur",checkInput,false);
+	//给各个按钮绑定点击事件
+	var leftIn = document.getElementById("left-in");
+	var rightIn = document.getElementById("right-in");
+	var leftOut =document.getElementById("left-out");
+	var rightOut = document.getElementById("right-out");
+
+	leftIn.addEventListener("click",inBtnHandle,false);
+	rightIn.addEventListener("click",inBtnHandle,false);
+	leftOut.addEventListener("click",outBtnHandle,false);
+	rightOut.addEventListener("click",outBtnHandle,false);
+
+  
+}
+
+init(); 
+	</script>
+</body>
+</html>

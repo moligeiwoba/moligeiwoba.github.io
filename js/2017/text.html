@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		 function quickSort(arry){
+			  var time = 0;
+			function sort(start,end){
+				var startnum = start;
+				var endnum = end-1;
+				var flag = arry[start];
+				if((end-start)>1){
+					while(startnum<endnum){
+						for (;startnum<endnum;endnum--) {
+							if (arry[endnum]<flag) {
+							arry[startnum++]=arry[endnum];
+							break;
+							}
+						}
+						for (; startnum<endnum; startnum++) {
+							if (arry[startnum]>flag) {
+							arry[endnum--]=arry[startnum];
+							break;
+							}
+						}
+					}
+					arry[startnum]=flag;
+					sort(0,startnum);
+					sort(startnum+1,end);
+				}
+			}
+			sort(0, arry.length);
+			return arry;
+		}
+		var arry=[5,4,85,1,6,7,8,1,2,8,6,4,8,9,4];
+		var x =quickSort(arry);
+		console.log(x);
+
+
+
+	</script>
+</body>
+</html>
