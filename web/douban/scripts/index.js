@@ -14,7 +14,7 @@ $(document).ready(function(){
     $.ajax({
         type: "get",
         async: false,
-        url: "https://api.douban.com/v2/movie/in_theaters",
+        url: "//api.douban.com/v2/movie/in_theaters",
         dataType: "jsonp",
         success: function(data){
           var str=" <ul class='clertfix'>",movearr;
@@ -34,7 +34,7 @@ $(document).ready(function(){
     $.ajax({
         type: "get",
         async: false,
-        url: "https://api.douban.com/v2/movie/top250",
+        url: "//api.douban.com/v2/movie/top250",
         dataType: "jsonp",
         success: function(data){
           var str=" <ol>",movearr;
@@ -50,39 +50,7 @@ $(document).ready(function(){
     });
   }
 
-  function newBook(){
-    $.ajax({
-        type: "get",
-        async: false,
-        url: "https://api.douban.com/v2/movie/top250",
-        dataType: "jsonp",
-        success: function(data){
-          var str=" <ol>",movearr;
-          movearr = data.subjects.slice(0,10);
-          $.each(movearr,function(i,n){
-            str += "<li><a href='"+n.alt+"''>"+n.title+"</a></li>";
-          }); 
-          str += "</ol>"
-          var r = $("#aony-move .side");
-          r.append(str);
-          $("#aony-move .side .smalldonghua").hide();
-        }
-    });
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  newBook();
+  
   hotMove();
   newMove();
 });
