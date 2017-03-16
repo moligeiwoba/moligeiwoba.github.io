@@ -62,6 +62,11 @@
 var arr = [];
 //创建数组 arrList[] 用于存储数组变化过程；
 var arrList = [];
+var flag = null;
+var arrstate = 0;
+var publicNum = 0;
+//用于记录暂停时候的状态
+var state = 0;
 //检查输入的合法性
 function checkInput(){
 	var input = document.getElementById("number");
@@ -132,6 +137,10 @@ function outBtnHandle(){
 		else if (this.id=="right-out"){
 		arr.pop();
 		}
+		if (flag) {
+		clearInterval(flag);
+		return false;
+		}
 		renderQuqne();
 	} else {
         alert('队列已经空啦！！！');
@@ -161,6 +170,9 @@ function emptyBtnHandle(){
 		return false;
 		}
 	arr = [];
+	if (flag) {
+		clearInterval(flag);
+	}
 	renderQuqne();
 }
 
@@ -168,6 +180,19 @@ function emptyBtnHandle(){
 	冒泡排序法
  */
 function bubbleSortBtnHandle(){
+	if (flag) {
+		clearInterval(flag);
+		flag = null;
+		return false;
+	}
+	if (state>=0&&state<=arrList.length) {
+		if (arrList[state]) {
+			arr=arrList[state];
+		}
+		if (state==arrList.length) {
+			console.log("1");
+		}
+	}
 	arrList = [];
 	var temp;
 	for (var i = 0; i<arr.length; i++) {
@@ -181,28 +206,30 @@ function bubbleSortBtnHandle(){
 			}
 		}
 	}
-	console.log(arrList);
 	arrListSort();
 
 }
 
 function arrListSort(){
-	var i = 0;
 	var liList = document.getElementById("number-box").getElementsByTagName("li") ;
 		var stchange = function setchange(){
-		if (i>arrList.length) {
+		if (state>=arrList.length) {
+			clearInterval(flag);
 			return false;
 		}
 		for (var j = 0; j <arr.length; j++) {
-				liList[j].style.marginTop=(100-arrList[i][j])+'px';
-				liList[j].style.height=arrList[i][j]+'px';
+				liList[j].style.marginTop=(100-arrList[state][j])+'px';
+				liList[j].style.height=arrList[state][j]+'px';
 			}
-			i++;
+			state++;
 		}
-		setInterval(stchange,50);
-		
+		flag = setInterval(stchange,50);
+
 }
 
+function arrSortStop(){
+
+}
 
 function init() {
 	//给input绑定onblur事件
@@ -232,6 +259,7 @@ function init() {
   	var bubbleSort =document.getElementById("bubble-sort");
   	//给排序按钮绑定事件
   	bubbleSort.addEventListener("click",bubbleSortBtnHandle,false);
+
 }
 
 init(); 

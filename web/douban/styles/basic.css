@@ -1,0 +1,46 @@
+body{
+	background: white;
+	padding-top: 30px;
+	margin: 0px;
+	font: 12px Helvetica,Arial,sans-serif;
+	min-width: 980px;
+	line-height: 1.62;
+}
+li{
+	list-style: none;
+}
+a{
+	color: #37a;
+	text-decoration: none;
+}
+ul,li,ol,dl,dt,dd{
+	margin: 0;
+	padding: 0;
+}
+
+.clertfix:before,.clertfix:after{
+	content:"";
+	display: table;
+
+}
+.clertfix:after{
+	clear: both;
+}
+
+.active dt{
+	margin-bottom: 3px;
+	margin-left: 10px;
+	font-size: 14px;
+	color: black;
+}
+.active dd{
+	display: inline-block;
+	margin-left: 10px;
+}
+.active dl{
+	margin-bottom: 10px;
+	margin-left: -10px;
+}
+.active dt a:hover{
+	color: white;
+}

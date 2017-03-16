@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>buy</title>
+	<style type="text/css">
+		#placeholder{
+			width: 1024px;
+			height: 768px;
+			background-color: white;
+		}
+		body{
+			font-family: "Helvetica","Arial",serif;
+			color: #333;
+			background: #ccc;
+			margin: 1em 10%;
+		}
+		h1{
+			color: #333;
+			background: transparent;
+		}
+		a{
+			color: #c60;
+			background-color: transparent;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		#imggegallery{
+			padding: 0px;
+		}
+		li{
+			display: inline-block;
+			padding: 1em;
+			list-style: none;
+		}
+		#imggegallery li a img {
+			border:0;
+			width: 100px;
+			height: 10 0px;
+		}
+		img{
+			display: block;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<h1>What to buy</h1>
+	<p>Don't forget to buy this stuff.</p>
+	<ul id="imggegallery">
+		<li><a  href="buyimg/pic1.jpg" title="scenery1"><img src="buyimg/pic1.jpg" alt="scenery1"></a></li>
+		<li><a  href="buyimg/pic2.jpg" title="scenery2"><img src="buyimg/pic2.jpg" alt="scenery2"></a></li>
+		<li><a  href="buyimg/pic3.jpg" title="scenery3"><img src="buyimg/pic3.jpg" alt="scenery3"></a></li>
+		<li><a  href="buyimg/pic4.jpg" title="scenery4"><img src="buyimg/pic4.jpg" alt="scenery4"></a></li>
+		<li><a  href="buyimg/pic5.jpg" title="scenery5"><img src="buyimg/pic5.jpg" alt="scenery5"></a></li>
+	</ul>
+
+	<script type="text/javascript">
+		/*
+		给每个连接添加展示图片和文字方法showPic
+		 */
+		function prepareGallery(){
+			if (!document.getElementsByTagName) return false;
+			if (!document.getElementById) return false;
+			if (!document.getElementById("imggegallery")) return false;
+			var gallery = document.getElementById("imggegallery");
+			var links = gallery.getElementsByTagName("a");
+			for (var i = 0; i <links.length; i++) {
+				links[i].onclick= function(){
+					return showPic(this)?false : true;
+				}
+			}
+		}
+
+		/*
+		创建展示图片函数
+		 */
+		 function preparePlaceholder(){
+		 	if (!document.createElement) return false;
+		 	if (!document.createTextNode) return false;
+		 	if (!document.getElementById) return false;
+		 	if (!document.getElementById("imggegallery")) return false;
+		 	var placeholder = document.createElement("img");
+		 	placeholder.setAttribute("id","placeholder");
+		 	placeholder.setAttribute("src","buyimg/pic5.jpg");
+		 	placeholder.setAttribute("alt","photo show");
+		 	var description = document.createElement("p");
+		 	description.setAttribute("id","imgdescription");
+		 	var destext = document.createTextNode("Choose an image");
+		 	description.appendChild(destext);
+		 	var gallery = document.getElementById("imggegallery");
+		 	insertAfter(placeholder,gallery);
+		 	insertAfter(description,placeholder);
+
+		 }
+		 /*
+		 创建插入在元素后面的方法
+		  */
+		  function insertAfter(newElement,targetElement){
+		  	var parent = targetElement.parentNode;
+		  	if (parent.lastChild == targetElement) {
+		  		parent.appendChild(newElement);
+		  	}else{
+		  		parent.insertBefore(newElement,targetElement.nextSibling);
+		  	}
+
+		  }
+		/*
+		创建共享事件方法
+		 */
+		function addLoadEvent(func){
+			var oldonload = window.onload;
+			if (typeof window.onload!='function') {
+				window.onload = func;
+			}else{
+				window.onload = function(){
+					oldonload();
+					func();
+				}
+			}
+		}
+		/*
+		创建展示图片方法和修改文字方法
+		 */
+		function showPic(whichpic){
+			var source =whichpic.getAttribute("href");
+			if (!document.getElementById("placeholder")) return false;
+			var placeholder = document.getElementById("placeholder");
+			if (placeholder.nodeName !="IMG") return false;
+			placeholder.setAttribute("src",source);
+			if (document.getElementById("imgdescription")) {
+				var text = whichpic.getAttribute("title")?whichpic.getAttribute("title"):"";
+				var description = document.getElementById("imgdescription");
+				if (description.firstChild.nodeType == 3) {
+					description.firstChild.nodeValue= text;
+				}
+			}
+			return true;
+		}
+
+		addLoadEvent(prepareGallery);
+		addLoadEvent(preparePlaceholder);
+	</script>
+</body>
+</html>
