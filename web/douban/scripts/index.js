@@ -14,7 +14,7 @@ $(document).ready(function(){
     $.ajax({
         type: "get",
         async: false,
-        url: "//api.douban.com/v2/movie/in_theaters",
+        url: "https://api.douban.com/v2/movie/in_theaters",
         dataType: "jsonp",
         success: function(data){
           var str=" <ul class='clertfix'>",movearr;
@@ -34,7 +34,7 @@ $(document).ready(function(){
     $.ajax({
         type: "get",
         async: false,
-        url: "//api.douban.com/v2/movie/top250",
+        url: "https://api.douban.com/v2/movie/top250",
         dataType: "jsonp",
         success: function(data){
           var str=" <ol>",movearr;

@@ -10,7 +10,7 @@
 	display: inline-block;
 }
 #anony-nav .anony-link a{
-	margin-left:10px; 
+	margin-left:17px; 
 	display: inline-block;
 	overflow: hidden;
 	width: 40px;
@@ -35,11 +35,11 @@
 }
 
 #anony-nav .anony-link .link-city{
-	background-position: -240px 0;
+	background-position: -299px 0;
 }
 
 #anony-nav .anony-link .link-fm{
-	background-position: -300px 0;
+	background-position: -240px 0;
 }
 
 #anony-nav .anony-link .link-dongxi{
@@ -77,7 +77,7 @@
 	position: relative;
 	width: 270px;
 	display: inline-block;
-	border:1px solid #eee;
+	border: 1px solid #c3c3c3;
 	height: 30px;
 }
 
@@ -442,8 +442,10 @@ content: '\0020';
 }
 .section .warrpe .laymain .content{
 	margin:0 295px 0 110px;
-	height: 545px;
 	position: relative;
+}
+#aony-move .content{
+height: 545px;
 }
 .laymain .content ul{
 	margin-top: -30px;
@@ -599,14 +601,6 @@ content: '\0020';
 #anony-book .sidenav .read-app {
 	margin-top: 20px;
 }
-#anony-book .sidenav .read-app .app-down{
-	display: block;
-	width: 50px;
-	height: 50px;
-	background: url(../images/app.jpg) no-repeat;
-}
-
-
 #anony-book .laymain .content .pic{
 	margin-bottom: 10px;
 }
@@ -650,20 +644,8 @@ content: '\0020';
 	margin-top: 20px;
 }
 
-#aony-music .sidenav .douban-fm .fm-link{
-	display: block;
-	width: 50px;
-	height: 50px;
-	background: url(../images/app.jpg) no-repeat -250px 0;
-}
 #aony-music .sidenav .douban-music{
 	margin-top: 20px;
-}
-#aony-music .sidenav .douban-music .music-link{
-	display: block;
-	width: 50px;
-	height: 50px;
-	background: url(../images/app.jpg) no-repeat -50px 0;
 }
 #aony-music .sidenav .nav-tit a{
 	color: #f38c00;
@@ -834,6 +816,18 @@ content: '\0020';
 #aony-city .laymain .city-active-info a{
 	display: inline;
 }
+.title-tickets-badge{
+	background-color: #ff8263;
+	display: inline-block;
+	color: #fff;
+    font-weight: 200;
+    font-size: 11px;
+    line-height: 17px;
+    padding: 0 3px;
+    border-radius: 3px;
+    margin-bottom: 3px;
+
+}
 #aony-city .laymain .city-active-info{
 	color: #666;
 }
@@ -900,9 +894,6 @@ content: '\0020';
 	z-index: 2;
 	position: absolute;
 	overflow: hidden;
-/* 	background-image: url(../images/donghua.gif);
-background-repeat: no-repeat;
-background-position: center center;  */
 }
 .smalldonghua{
 	width: 265px;
@@ -911,7 +902,32 @@ background-position: center center;  */
 	z-index: 2;
 	position: absolute;
 	overflow: hidden;
-/* 	background-image: url(../images/donghua.gif);
-background-repeat: no-repeat;
-background-position: center center;  */
+}
+
+
+.new-icon:after{
+	content: "";
+	width: 17px;
+	height: 7px;
+	vertical-align: top;
+	display: inline-block;
+	background: url(../images/new_menu.gif) no-repeat center center;
+}
+
+.link-icon{
+	display: block;
+	width: 50px;
+    height: 50px;
+    background: url(../images/app.jpg) no-repeat;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px #999;
+}
+.link-icon-read{
+	background-position: 0 0;
+}
+.link-icon-fm{
+	background-position: -250px 0;
+}
+.link-icon-artists{
+	background-position: -50px 0;
 }

@@ -5,7 +5,7 @@
 	<title>豆瓣</title>
 	<link rel="stylesheet" href="styles/basic.css">
 	<link rel="stylesheet" href="styles/home.css">
-	<script type="text/javascript" src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
 	<nav id="anony-nav">
@@ -169,68 +169,14 @@
 						<div class="donghua">	
 						</div>
 						<h2>正在热映 · · · · · · <span> (<a href="#" class="more">更多</a>)</span></h2>
-						<!-- <ul class="clertfix">
-							<li>
-								<a class="move-pic" href="#"><img src="images/move1.jpg" alt="一条狗的使命"></a>
-								<a href="" class="move-tit">一条狗的使命</a>
-								<div class="rating"><span class="allstar40"></span><i>7.8</i></div>	
-								<a href="#" class="link-buy">选票购座</a>
 						
-							</li>
-							<li>
-								<a class="move-pic" href="#"><img src="images/move2.jpg" alt="小阴谋大爱情"></a>
-								<a href="" class="move-tit">小阴谋大爱情</a>
-								<div class="rating"><span class="allstar40"></span><i>7.8</i></div>
-								<a href="#" class="link-buy">选票购座</a>
-							</li>
-							<li>
-							    <a class="move-pic" href="#"><img src="images/move3.jpg" alt="金刚狼3：殊死一战"></a>
-							    <a href="" class="move-tit">金刚狼3：殊死...</a>
-							    <div class="rating"><span class="allstar40"></span><i>7.8</i></div>
-							    <a href="#" class="link-buy">选票购座</a>
-						
-							</li>
-							<li>
-							    <a class="move-pic" href="#"><img src="images/move4.jpg" alt="生化危机：终章之战"></a>
-							    <a href="" class="move-tit">生化危机：终...</a>
-							    <div class="rating"><span class="allstar40"></span><i>7.8</i></div>
-							    <a href="#" class="link-buy">选票购座</a>
-						
-							</li>
-							<li>
-								<a class="move-pic" href="#"><img src="images/move5.jpg" alt="最终幻想15：王者之战"></a>
-								<a href="" class="move-tit">最终幻想15：...</a>
-								<div class="rating"><span class="allstar40"></span><i>7.8</i></div>
-								<a href="#" class="link-buy">选票购座</a>
-						
-							</li>
-							<li>
-								<a class="move-pic" href="#"><img src="images/move6.jpg" alt="天才捕手"></a>
-								<a href="" class="move-tit">天才捕手</a>
-								<div class="rating"><span class="allstar40"></span><i>7.8</i></div>
-								<a href="#" class="link-buy">选票购座</a>
-						
-							</li>
-							<li>
-								<a class="move-pic" href="#"><img src="images/move7.jpg" alt="欢乐好声音"></a>
-								<a href="" class="move-tit">欢乐好声音</a>
-								<div class="rating"><span class="allstar40"></span><i>7.8</i></div>
-								<a href="#" class="link-buy">选票购座</a>
-							</li>
-							<li>
-								<a class="move-pic" href="#"><img src="images/move8.jpg" alt="碟仙诡谭2"></a>
-								<a href="" class="move-tit">碟仙诡谭2</a>
-								<div class="rating"><span class="allstar40"></span><i>7.8</i></div>
-								<a href="#" class="link-buy">选票购座</a>
-							</li>
-						</ul> -->
 					</div>
 				</div>
 				<div class="sidenav">
 					<dl>
 						<dt class="nav-tit"><a href="#">电影</a></dt>
 						<dd><a href="#">影讯&购票</a></dd>
-						<dd><a href="#">选电影</a></dd>
+						<dd class="new-icon"><a href="#">选电影</a></dd>
 						<dd><a href="#">电视剧</a></dd>
 						<dd><a href="#">排行榜</a></dd>
 						<dd><a href="#">分类</a></dd>
@@ -595,13 +541,15 @@
 					<dl>
 						<dt class="nav-tit"><a href="#">读书</a></dt>
 						<dd><a href="#">分类浏览</a></dd>
-						<dd><a href="#">阅读</a></dd>
+						<dd class="new-icon"><a href="#">阅读</a></dd>
 						<dd><a href="#">作者</a></dd>
 						<dd><a href="#">书评</a></dd>
 						<dd><a href="#">购物单</a></dd>
 					</dl>
 					<div class="read-app">
-						<a class="app-down" href="#"></a>
+						<a  class="app-down" href="#">
+							<i class="link-icon link-icon-read"></i>
+						</a>
 						<a href="">豆瓣阅读</a>
 					</div>
 				</div>
@@ -793,11 +741,15 @@
 						<dd><a href="#">阿比鹿音乐奖</a></dd>
 					</dl>
 					<div class="douban-fm">
-						<a class="fm-link" href="#"></a>
+						<a class="fm-link" href="#">
+							<i class="link-icon link-icon-fm"></i>
+						</a>
 						<a href="">豆瓣FM</a>
 					</div>
 					<div class="douban-music">
-						<a class="music-link" href="#"></a>
+						<a class="music-link" href="#">
+							<i class="link-icon link-icon-artists"></i>
+						</a>
 						<a href="">豆瓣音乐人</a>
 					</div>
 				</div>
@@ -1016,7 +968,7 @@
 							<li>
 								<div class="city-active-pic"><a href="#"><img src="images/actice3.jpg" alt="图片3"></a></div>
 								<div class="city-active-info">
-									<a href="#">2017院庆演出季 中法文化之春 和谐之诗古乐团《巴洛克...</a>
+									<a href="#">2017院庆演出季 中法文化之春 和谐之诗古乐团《巴洛克...<span class="title-tickets-badge">正在售票</span></a>
 									<div>5月20日 周六 00:00 - 22:00</div>
 									<address title="广州大剧院">广州大剧院</address>
 									<div>6人关注</div>
@@ -1025,7 +977,7 @@
 							<li>
 								<div class="city-active-pic"><a href="#"><img src="images/actice4.jpg" alt="图片4"></a></div>
 								<div class="city-active-info">
-									<a href="#">陕西人艺话剧《白鹿原》广州站（中国话剧新巅峰之作 ...</a>
+									<a href="#">陕西人艺话剧《白鹿原》广州站（中国话剧新巅峰之作 ...<span class="title-tickets-badge">正在售票</span></a>
 									<div>4月28日 周五 - 4月29日 周六</div>
 									<address title="广州大剧院">广州大剧院</address>
 									<div>24人关注</div>
